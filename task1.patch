@@ -1,0 +1,1209 @@
+diff --git a/.env b/.env
+new file mode 100644
+index 0000000..7d910f1
+--- /dev/null
++++ b/.env
+@@ -0,0 +1 @@
++SKIP_PREFLIGHT_CHECK=true
+\ No newline at end of file
+diff --git a/README.markdown b/README.markdown
+new file mode 100755
+index 0000000..c24730a
+--- /dev/null
++++ b/README.markdown
+@@ -0,0 +1,80 @@
++<p align="center">
++<a href="https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College%20Students%3A%20Learn%20how%20to%20work%20at%20a%20YC%20startup">
++<img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/yc/yc-blade.png"></a>
++<br><br>
++  <a href="https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College%20Students%3A%20Learn%20how%20to%20work%20at%20a%20YC%20startup">
++  <img src="https://s3-ap-southeast-2.amazonaws.com/insidesherpa-assets/yc/workatastartup_logo_orange-c2a27f6374f9395166ee9906e2e0873af835b3c6132ae6aa0543582298567041.svg"></a>
++</p>
++
++
++<p align='center'> 
++  <b><a href="#task"> Task Overview </a> </b>
++  | 
++  <b><a href="#installation"> Installation </a></b>
++  |
++  <b><a href="https://www.insidesherpa.com/modules/oRMogWRHeewqHzA7u/58dLdeDgbwf9Ste3j"> Link to Module 1 </a></b>
++  |
++  <b><a href="https://www.insidesherpa.com/virtual-internships/prototype/oRMogWRHeewqHzA7u/College%20Students%3A%20Learn%20how%20to%20work%20at%20a%20YC%20startup" target="_blank"> Link to Y Combinator Program </a></b>
++
++           
++</p>
++
++
++# Introduction 
++<p> 
++<b> College Students: 
++  Learn how to work at a Y Combinator startup </b>
++<br>Train online for the skills Y Combinator startups are looking for. One of the official ways to get recruited into a Y Combinator startup.
++</p>
++
++<h2 id="task">Module 1 Task Overview</h2>
++
++<b> Working Fullstack 1: </b> Frontend updates based on feedback.
++Help update the frontend of a new productivity tool for shipping.
++<br><br>
++<b> Aim: </b> Your task is to take the base shipping productivity tool and add in the ability for the new feature, the kanban board, to move shipping requests, to two new lane statuses (in-progress and complete). <b><i> Don't worry about any backend updates for now.</i></b>
++<br><br>
++Acceptance Criteria
++<ul>
++<li> In the "Shipping Requests" tab of the application, all tasks should show in the backlog swimlane.</li>
++<li> There should be 3 swimlanes.</li>
++<li> When a user drags a card up, down or into another swimlane, it reorders the card and stays there. (frontend only)</li>
++<li> When a card changes swimlane, it should change color </li>
++</ul>
++
++<h2 id="installation"> Installation </h2>
++
++1. Clone the Shiptivity frontend repository
++2. Make the necessary changes to the code (frontend only) and make use of the <a href="#dragula"> Dragula tool </a>
++
++## Available Scripts
++
++In the project directory, you can run:
++
++### `npm start`
++
++this runs the app in the development mode.
++<br>Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
++
++The page will reload if you make edits.
++You will also see any lint errors in the console.
++
++We have loaded some clients data in Board.js.
++Each client is an object of
++interface Client {
++  id: number,
++  name: string,
++  description: string,
++  status: 'backlog' | 'in-progress' | 'complete,
++}
++
++<p id="dragula">
++The Dragula library has been installed, you can use it by importing it on top of each file that you need
++<p> 
++
++### `import Dragula from 'dragula';`
++
++then use it by calling `Dragula` directly.
++
++Visit Dragula repository on github for more information
++[https://github.com/bevacqua/dragula](https://github.com/bevacqua/dragula)
+diff --git a/README.md b/README.md
+deleted file mode 100755
+index 9d9614c..0000000
+--- a/README.md
++++ /dev/null
+@@ -1,68 +0,0 @@
+-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-
+-## Available Scripts
+-
+-In the project directory, you can run:
+-
+-### `npm start`
+-
+-Runs the app in the development mode.<br>
+-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-
+-The page will reload if you make edits.<br>
+-You will also see any lint errors in the console.
+-
+-### `npm test`
+-
+-Launches the test runner in the interactive watch mode.<br>
+-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-
+-### `npm run build`
+-
+-Builds the app for production to the `build` folder.<br>
+-It correctly bundles React in production mode and optimizes the build for the best performance.
+-
+-The build is minified and the filenames include the hashes.<br>
+-Your app is ready to be deployed!
+-
+-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-
+-### `npm run eject`
+-
+-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+-
+-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-
+-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-
+-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-
+-## Learn More
+-
+-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-
+-To learn React, check out the [React documentation](https://reactjs.org/).
+-
+-### Code Splitting
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+-
+-### Analyzing the Bundle Size
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+-
+-### Making a Progressive Web App
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-
+-### Advanced Configuration
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+-
+-### Deployment
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+-
+-### `npm run build` fails to minify
+-
+-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+diff --git a/package-lock.json b/package-lock.json
+index da48ab3..52f63da 100644
+--- a/package-lock.json
++++ b/package-lock.json
+@@ -1647,6 +1647,11 @@
+       "resolved": "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz",
+       "integrity": "sha1-x57Zf380y48robyXkLzDZkdLS3k="
+     },
++    "atoa": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/atoa/-/atoa-1.0.0.tgz",
++      "integrity": "sha1-DMDpGkgOc4+SPrwQNnZHF3mzSkk="
++    },
+     "atob": {
+       "version": "2.1.2",
+       "resolved": "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz",
+@@ -2403,6 +2408,11 @@
+       "resolved": "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz",
+       "integrity": "sha1-aN/1++YMUes3cl6p4+0xDcwed24="
+     },
++    "bootstrap": {
++      "version": "4.2.1",
++      "resolved": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.2.1.tgz",
++      "integrity": "sha512-tt/7vIv3Gm2mnd/WeDx36nfGGHleil0Wg8IeB7eMrVkY0fZ5iTaBisSh8oNANc2IBsCc6vCgCNTIM/IEN0+50Q=="
++    },
+     "brace-expansion": {
+       "version": "1.1.11",
+       "resolved": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz",
+@@ -2788,7 +2798,8 @@
+             },
+             "ansi-regex": {
+               "version": "2.1.1",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "aproba": {
+               "version": "1.2.0",
+@@ -2806,11 +2817,13 @@
+             },
+             "balanced-match": {
+               "version": "1.0.0",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "brace-expansion": {
+               "version": "1.1.11",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "balanced-match": "^1.0.0",
+                 "concat-map": "0.0.1"
+@@ -2823,15 +2836,18 @@
+             },
+             "code-point-at": {
+               "version": "1.1.0",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "concat-map": {
+               "version": "0.0.1",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "console-control-strings": {
+               "version": "1.1.0",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "core-util-is": {
+               "version": "1.0.2",
+@@ -2934,7 +2950,8 @@
+             },
+             "inherits": {
+               "version": "2.0.3",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "ini": {
+               "version": "1.3.5",
+@@ -2944,6 +2961,7 @@
+             "is-fullwidth-code-point": {
+               "version": "1.0.0",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "number-is-nan": "^1.0.0"
+               }
+@@ -2956,17 +2974,20 @@
+             "minimatch": {
+               "version": "3.0.4",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "brace-expansion": "^1.1.7"
+               }
+             },
+             "minimist": {
+               "version": "0.0.8",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "minipass": {
+               "version": "2.3.5",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "safe-buffer": "^5.1.2",
+                 "yallist": "^3.0.0"
+@@ -2983,6 +3004,7 @@
+             "mkdirp": {
+               "version": "0.5.1",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "minimist": "0.0.8"
+               }
+@@ -3055,7 +3077,8 @@
+             },
+             "number-is-nan": {
+               "version": "1.0.1",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "object-assign": {
+               "version": "4.1.1",
+@@ -3065,6 +3088,7 @@
+             "once": {
+               "version": "1.4.0",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "wrappy": "1"
+               }
+@@ -3140,7 +3164,8 @@
+             },
+             "safe-buffer": {
+               "version": "5.1.2",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "safer-buffer": {
+               "version": "2.1.2",
+@@ -3170,6 +3195,7 @@
+             "string-width": {
+               "version": "1.0.2",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "code-point-at": "^1.0.0",
+                 "is-fullwidth-code-point": "^1.0.0",
+@@ -3187,6 +3213,7 @@
+             "strip-ansi": {
+               "version": "3.0.1",
+               "bundled": true,
++              "optional": true,
+               "requires": {
+                 "ansi-regex": "^2.0.0"
+               }
+@@ -3225,11 +3252,13 @@
+             },
+             "wrappy": {
+               "version": "1.0.2",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             },
+             "yallist": {
+               "version": "3.0.3",
+-              "bundled": true
++              "bundled": true,
++              "optional": true
+             }
+           }
+         },
+@@ -3577,6 +3606,15 @@
+       "resolved": "https://registry.npmjs.org/content-type/-/content-type-1.0.4.tgz",
+       "integrity": "sha512-hIP3EEPs8tB9AT1L+NUqtwOAps4mk2Zob89MWXMHjHWg9milF/j4osnnQLXBCBFBk/tvIG/tUc9mOUJiPBhPXA=="
+     },
++    "contra": {
++      "version": "1.9.4",
++      "resolved": "https://registry.npmjs.org/contra/-/contra-1.9.4.tgz",
++      "integrity": "sha1-9TveQtfltZhcrk2ZqNYQUm3o8o0=",
++      "requires": {
++        "atoa": "1.0.0",
++        "ticky": "1.0.1"
++      }
++    },
+     "convert-source-map": {
+       "version": "1.6.0",
+       "resolved": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.6.0.tgz",
+@@ -3680,6 +3718,14 @@
+         "which": "^1.2.9"
+       }
+     },
++    "crossvent": {
++      "version": "1.5.4",
++      "resolved": "https://registry.npmjs.org/crossvent/-/crossvent-1.5.4.tgz",
++      "integrity": "sha1-2ixPj0DJR4JRe/K+7BBEFIGUq5I=",
++      "requires": {
++        "custom-event": "1.0.0"
++      }
++    },
+     "crypto-browserify": {
+       "version": "3.12.0",
+       "resolved": "https://registry.npmjs.org/crypto-browserify/-/crypto-browserify-3.12.0.tgz",
+@@ -4104,6 +4150,11 @@
+         "cssom": "0.3.x"
+       }
+     },
++    "custom-event": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/custom-event/-/custom-event-1.0.0.tgz",
++      "integrity": "sha1-LkYovhncSyFLXAJjDFlx6BFhgGI="
++    },
+     "cyclist": {
+       "version": "0.2.2",
+       "resolved": "https://registry.npmjs.org/cyclist/-/cyclist-0.2.2.tgz",
+@@ -4503,6 +4554,15 @@
+       "resolved": "https://registry.npmjs.org/dotenv-expand/-/dotenv-expand-4.2.0.tgz",
+       "integrity": "sha1-3vHxyl1gWdJKdm5YeULCEQbOEnU="
+     },
++    "dragula": {
++      "version": "3.7.2",
++      "resolved": "https://registry.npmjs.org/dragula/-/dragula-3.7.2.tgz",
++      "integrity": "sha1-SjXJ05gf+sGpScKcpyhQWOhzk84=",
++      "requires": {
++        "contra": "1.9.4",
++        "crossvent": "1.5.4"
++      }
++    },
+     "duplexer": {
+       "version": "0.1.1",
+       "resolved": "https://registry.npmjs.org/duplexer/-/duplexer-0.1.1.tgz",
+@@ -6110,7 +6170,8 @@
+         },
+         "ansi-regex": {
+           "version": "2.1.1",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "aproba": {
+           "version": "1.2.0",
+@@ -6128,11 +6189,13 @@
+         },
+         "balanced-match": {
+           "version": "1.0.0",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "brace-expansion": {
+           "version": "1.1.11",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "balanced-match": "^1.0.0",
+             "concat-map": "0.0.1"
+@@ -6145,15 +6208,18 @@
+         },
+         "code-point-at": {
+           "version": "1.1.0",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "concat-map": {
+           "version": "0.0.1",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "console-control-strings": {
+           "version": "1.1.0",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "core-util-is": {
+           "version": "1.0.2",
+@@ -6256,7 +6322,8 @@
+         },
+         "inherits": {
+           "version": "2.0.3",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "ini": {
+           "version": "1.3.5",
+@@ -6266,6 +6333,7 @@
+         "is-fullwidth-code-point": {
+           "version": "1.0.0",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "number-is-nan": "^1.0.0"
+           }
+@@ -6278,17 +6346,20 @@
+         "minimatch": {
+           "version": "3.0.4",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "brace-expansion": "^1.1.7"
+           }
+         },
+         "minimist": {
+           "version": "0.0.8",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "minipass": {
+           "version": "2.2.4",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "safe-buffer": "^5.1.1",
+             "yallist": "^3.0.0"
+@@ -6305,6 +6376,7 @@
+         "mkdirp": {
+           "version": "0.5.1",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "minimist": "0.0.8"
+           }
+@@ -6377,7 +6449,8 @@
+         },
+         "number-is-nan": {
+           "version": "1.0.1",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "object-assign": {
+           "version": "4.1.1",
+@@ -6387,6 +6460,7 @@
+         "once": {
+           "version": "1.4.0",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "wrappy": "1"
+           }
+@@ -6462,7 +6536,8 @@
+         },
+         "safe-buffer": {
+           "version": "5.1.1",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "safer-buffer": {
+           "version": "2.1.2",
+@@ -6492,6 +6567,7 @@
+         "string-width": {
+           "version": "1.0.2",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "code-point-at": "^1.0.0",
+             "is-fullwidth-code-point": "^1.0.0",
+@@ -6509,6 +6585,7 @@
+         "strip-ansi": {
+           "version": "3.0.1",
+           "bundled": true,
++          "optional": true,
+           "requires": {
+             "ansi-regex": "^2.0.0"
+           }
+@@ -6547,11 +6624,13 @@
+         },
+         "wrappy": {
+           "version": "1.0.2",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         },
+         "yallist": {
+           "version": "3.0.2",
+-          "bundled": true
++          "bundled": true,
++          "optional": true
+         }
+       }
+     },
+@@ -8794,6 +8873,11 @@
+         "topo": "2.x.x"
+       }
+     },
++    "jquery": {
++      "version": "3.3.1",
++      "resolved": "https://registry.npmjs.org/jquery/-/jquery-3.3.1.tgz",
++      "integrity": "sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg=="
++    },
+     "js-levenshtein": {
+       "version": "1.1.6",
+       "resolved": "https://registry.npmjs.org/js-levenshtein/-/js-levenshtein-1.1.6.tgz",
+@@ -10227,6 +10311,11 @@
+       "resolved": "https://registry.npmjs.org/pnp-webpack-plugin/-/pnp-webpack-plugin-1.1.0.tgz",
+       "integrity": "sha512-CPCdcFxx7fEcDMWTDjXe2Wypt4JuMt4q5Q2UrpTcyBBkLiCIyPEh/mCGmUWIcNkKGyXwQ9Y2wVhlKm6ketiBNQ=="
+     },
++    "popper.js": {
++      "version": "1.14.7",
++      "resolved": "https://registry.npmjs.org/popper.js/-/popper.js-1.14.7.tgz",
++      "integrity": "sha512-4q1hNvoUre/8srWsH7hnoSJ5xVmIL4qgz+s4qf2TnJIMyZFUFMGH+9vE7mXynAlHSZ/NdTmmow86muD0myUkVQ=="
++    },
+     "portfinder": {
+       "version": "1.0.20",
+       "resolved": "https://registry.npmjs.org/portfinder/-/portfinder-1.0.20.tgz",
+@@ -16160,6 +16249,11 @@
+       "resolved": "https://registry.npmjs.org/thunky/-/thunky-1.0.3.tgz",
+       "integrity": "sha512-YwT8pjmNcAXBZqrubu22P4FYsh2D4dxRmnWBOL8Jk8bUcRUtc5326kx32tuTmFDAZtLOGEVNl8POAR8j896Iow=="
+     },
++    "ticky": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/ticky/-/ticky-1.0.1.tgz",
++      "integrity": "sha1-t8+nHnaPHJAAxJe5FRswlHxQ5G0="
++    },
+     "timers-browserify": {
+       "version": "2.0.10",
+       "resolved": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.10.tgz",
+diff --git a/package.json b/package.json
+index 541444c..e517e12 100644
+--- a/package.json
++++ b/package.json
+@@ -1,8 +1,16 @@
+ {
+   "name": "yc-task1",
+   "version": "0.1.0",
++  "engines": {
++    "npm": "6.7.0",
++    "node": "11.10.0"
++  },
+   "private": true,
+   "dependencies": {
++    "bootstrap": "^4.2.1",
++    "dragula": "^3.7.2",
++    "jquery": "^3.3.1",
++    "popper.js": "^1.14.7",
+     "react": "^16.7.0",
+     "react-dom": "^16.7.0",
+     "react-scripts": "2.1.3"
+diff --git a/public/index.html b/public/index.html
+index 323182f..273a565 100755
+--- a/public/index.html
++++ b/public/index.html
+@@ -22,7 +22,7 @@
+       work correctly both with client-side routing and a non-root public URL.
+       Learn how to configure a non-root public URL by running `npm run build`.
+     -->
+-    <title>React App</title>
++    <title>Shiptivitas</title>
+   </head>
+   <body>
+     <noscript>You need to enable JavaScript to run this app.</noscript>
+diff --git a/src/App.css b/src/App.css
+index 92f956e..04a0f9a 100755
+--- a/src/App.css
++++ b/src/App.css
+@@ -2,14 +2,9 @@
+   text-align: center;
+ }
+ 
+-.App-logo {
+-  animation: App-logo-spin infinite 20s linear;
+-  height: 40vmin;
+-}
+-
+ .App-header {
+   background-color: #282c34;
+-  min-height: 100vh;
++  min-height: calc(100vh - 50px);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+@@ -22,11 +17,27 @@
+   color: #61dafb;
+ }
+ 
+-@keyframes App-logo-spin {
+-  from {
+-    transform: rotate(0deg);
+-  }
+-  to {
+-    transform: rotate(360deg);
+-  }
++.App-icon {
++  width: 230px;
+ }
++
++.Circle {
++  border-radius: 50%;
++  height: 30px;
++  width: 30px;
++  margin: 10px;
++  background: mediumturquoise;
++  transition: all 1.5s cubic-bezier(0,1,.98,0);
++}
++
++.App-title {
++  padding: 120px;
++}
++
++.App-title:hover .Circle{
++  transform: translateX(200px);
++}
++
++.nav {
++  padding: 12px 48px 0 48px;
++}
+\ No newline at end of file
+diff --git a/src/App.js b/src/App.js
+index 7e261ca..18bcba9 100755
+--- a/src/App.js
++++ b/src/App.js
+@@ -1,28 +1,54 @@
+ import React, { Component } from 'react';
+-import logo from './logo.svg';
++import 'bootstrap/dist/css/bootstrap.css';
++import HomeTab from './HomeTab';
++import Navigation from './Navigation';
++import Board from './Board';
+ import './App.css';
+ 
+ class App extends Component {
++  constructor(props) {
++    super(props);
++    this.state = {
++      selectedTab: 'home',
++    };
++  }
++  renderShippingRequests() {
++    return (<Board />);
++  }
++
++  renderNavigation() {
++    return (<Navigation
++      onClick={(tabName) => this.changeTab(tabName)}
++      selectedTab={this.state.selectedTab}
++      />);
++  }
++
++  renderTabContent() {
++    switch(this.state.selectedTab) {
++      case 'home':
++      default:
++        return HomeTab();
++      case 'shipping-requests':
++        return this.renderShippingRequests();
++    }
++  }
+   render() {
+     return (
+       <div className="App">
+-        <header className="App-header">
+-          <img src={logo} className="App-logo" alt="logo" />
+-          <p>
+-            Edit <code>src/App.js</code> and save to reload.
+-          </p>
+-          <a
+-            className="App-link"
+-            href="https://reactjs.org"
+-            target="_blank"
+-            rel="noopener noreferrer"
+-          >
+-            Learn React
+-          </a>
+-        </header>
++        {this.renderNavigation()}
++
++        <div className="App-body">
++          {this.renderTabContent()}
++        </div>
+       </div>
+     );
+   }
++
++  changeTab(tabName) {
++    this.setState({
++      selectedTab: tabName,
++    });
++  }
+ }
+ 
+ export default App;
+diff --git a/src/Board.css b/src/Board.css
+new file mode 100644
+index 0000000..792e356
+--- /dev/null
++++ b/src/Board.css
+@@ -0,0 +1,3 @@
++.Board {
++  margin-top: 12px;
++}
+diff --git a/src/Board.js b/src/Board.js
+new file mode 100644
+index 0000000..caf8fc8
+--- /dev/null
++++ b/src/Board.js
+@@ -0,0 +1,102 @@
++import React from 'react';
++import Dragula from 'dragula';
++import 'dragula/dist/dragula.css';
++import Swimlane from './Swimlane';
++import './Board.css';
++
++export default class Board extends React.Component {
++  constructor(props) {
++    super(props);
++    const clients = this.getClients();
++    this.state = {
++      clients: {
++        backlog: clients.filter(client => !client.status || client.status === 'backlog'),
++        inProgress: clients.filter(client => client.status && client.status === 'in-progress'),
++        complete: clients.filter(client => client.status && client.status === 'complete'),
++      }
++    }
++    this.swimlanes = {
++      backlog: React.createRef(),
++      inProgress: React.createRef(),
++      complete: React.createRef(),
++    }
++  }
++  componentDidMount() {
++    const { backlog, inProgress, complete } = this.swimlanes;
++    let containers = [
++      backlog.current,
++      inProgress.current,
++      complete.current
++    ];
++    let drake = Dragula({ containers: containers });
++    drake.on("drop", (el, target) => {
++      const lane = target.previousSibling.innerHTML;
++      if (lane === "Backlog") {
++        this.changeCardAttributes(el, "grey", "backlog");
++      } else if (lane === "In Progress") {
++        this.changeCardAttributes(el, "blue", "in-progress");
++      } else if (lane === "Complete") {
++        this.changeCardAttributes(el, "green", "completed");
++      }
++      console.log("el:", el);
++    })
++  }
++  changeCardAttributes(el, color, status) {
++    el.className = `Card Card-${color}`;
++    el.dataset.status = status;
++  }
++  getClients() {
++    return [
++      ['1', 'Stark, White and Abbott', 'Cloned Optimal Architecture', 'in-progress'],
++      ['2', 'Wiza LLC', 'Exclusive Bandwidth-Monitored Implementation', 'complete'],
++      ['3', 'Nolan LLC', 'Vision-Oriented 4Thgeneration Graphicaluserinterface', 'backlog'],
++      ['4', 'Thompson PLC', 'Streamlined Regional Knowledgeuser', 'in-progress'],
++      ['5', 'Walker-Williamson', 'Team-Oriented 6Thgeneration Matrix', 'in-progress'],
++      ['6', 'Boehm and Sons', 'Automated Systematic Paradigm', 'backlog'],
++      ['7', 'Runolfsson, Hegmann and Block', 'Integrated Transitional Strategy', 'backlog'],
++      ['8', 'Schumm-Labadie', 'Operative Heuristic Challenge', 'backlog'],
++      ['9', 'Kohler Group', 'Re-Contextualized Multi-Tasking Attitude', 'backlog'],
++      ['10', 'Romaguera Inc', 'Managed Foreground Toolset', 'backlog'],
++      ['11', 'Reilly-King', 'Future-Proofed Interactive Toolset', 'complete'],
++      ['12', 'Emard, Champlin and Runolfsdottir', 'Devolved Needs-Based Capability', 'backlog'],
++      ['13', 'Fritsch, Cronin and Wolff', 'Open-Source 3Rdgeneration Website', 'complete'],
++      ['14', 'Borer LLC', 'Profit-Focused Incremental Orchestration', 'backlog'],
++      ['15', 'Emmerich-Ankunding', 'User-Centric Stable Extranet', 'in-progress'],
++      ['16', 'Willms-Abbott', 'Progressive Bandwidth-Monitored Access', 'in-progress'],
++      ['17', 'Brekke PLC', 'Intuitive User-Facing Customerloyalty', 'complete'],
++      ['18', 'Bins, Toy and Klocko', 'Integrated Assymetric Software', 'backlog'],
++      ['19', 'Hodkiewicz-Hayes', 'Programmable Systematic Securedline', 'backlog'],
++      ['20', 'Murphy, Lang and Ferry', 'Organized Explicit Access', 'backlog'],
++    ].map(companyDetails => ({
++      id: companyDetails[0],
++      name: companyDetails[1],
++      description: companyDetails[2],
++      status: companyDetails[3],
++    }));
++  }
++  renderSwimlane(name, clients, ref) {
++    return (
++      <Swimlane name={name} clients={clients} dragulaRef={ref} />
++    );
++  }
++
++  render() {
++    return (
++      <div className="Board">
++        <div className="container-fluid">
++          <div className="row">
++            <div className="col-md-4">
++              {this.renderSwimlane('Backlog', this.state.clients.backlog, this.swimlanes.backlog)}
++            </div>
++            <div className="col-md-4">
++              {this.renderSwimlane('In Progress', this.state.clients.inProgress, this.swimlanes.inProgress)}
++            </div>
++            <div className="col-md-4">
++              {this.renderSwimlane('Complete', this.state.clients.complete, this.swimlanes.complete)}
++            </div>
++          </div>
++        </div>
++      </div>
++    );
++  }
++}
+diff --git a/src/Card.css b/src/Card.css
+new file mode 100644
+index 0000000..6fec4e4
+--- /dev/null
++++ b/src/Card.css
+@@ -0,0 +1,25 @@
++.Card {
++  background-color: lightgrey;
++  font-size: 12px;
++  padding: 20px;
++  margin-bottom: 10px;
++}
++
++.Card-grey {
++  background-color: rgba(167, 158, 158, 0.671);
++  color: black;
++}
++
++.Card-blue {
++  background-color: skyblue;
++  color: white;
++}
++
++.Card-green {
++  background-color: rgb(150, 190, 150);
++  color: white;
++}
++
++.Card-title {
++  font-weight: bold;
++}
+diff --git a/src/Card.js b/src/Card.js
+new file mode 100644
+index 0000000..a8ad663
+--- /dev/null
++++ b/src/Card.js
+@@ -0,0 +1,20 @@
++import React from 'react';
++import './Card.css';
++
++export default class Card extends React.Component {
++  render() {
++    let className = ['Card'];
++    if (this.props.status === 'backlog') {
++      className.push('Card-grey');
++    } else if (this.props.status === 'in-progress') {
++      className.push('Card-blue');
++    } else if (this.props.status === 'complete') {
++      className.push('Card-green');
++    }
++    return (
++      <div className={className.join(' ')} data-id={this.props.id} data-status={this.props.status}>
++        <div className="Card-title">{this.props.name}</div>
++      </div>
++    );
++  }
++}
+\ No newline at end of file
+diff --git a/src/HomeTab.js b/src/HomeTab.js
+new file mode 100644
+index 0000000..24543da
+--- /dev/null
++++ b/src/HomeTab.js
+@@ -0,0 +1,16 @@
++import React from 'react';
++
++export default function HomeTab() {
++  return (
++    <header className="App-header">
++      <div className="App-title">
++        <h1>
++          SHIPTIVITAS
++        </h1>
++        <div className="App-icon">
++          <div className="Circle"></div>
++        </div>
++      </div>
++    </header>
++  );
++}
+\ No newline at end of file
+diff --git a/src/Navigation.js b/src/Navigation.js
+new file mode 100644
+index 0000000..1580ce8
+--- /dev/null
++++ b/src/Navigation.js
+@@ -0,0 +1,18 @@
++import React from 'react';
++
++export default class Navigation extends React.Component {
++  render() {
++    return (
++      <ul className="nav nav-tabs" id="myTab" role="tablist">
++        <li className="nav-item">
++          <a className={"nav-link " + (this.props.selectedTab === 'home' ? 'active': '')} onClick={() => this.props.onClick("home")}
++            id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected={this.props.selectedTab === 'home'}>Home</a>
++        </li>
++        <li className="nav-item">
++          <a className={"nav-link " + (this.props.selectedTab === 'shipping-requests' ? 'active': '')} onClick={() => this.props.onClick("shipping-requests")}
++          id="shipping-requests-tab" data-toggle="tab" href="#shipping-requests" role="tab" aria-controls="shipping-requests" aria-selected={this.props.selectedTab === 'shipping-requests'}>Shipping Requests</a>
++        </li>
++      </ul>
++    );
++  }
++}
+\ No newline at end of file
+diff --git a/src/Swimlane.css b/src/Swimlane.css
+new file mode 100644
+index 0000000..2cb5f86
+--- /dev/null
++++ b/src/Swimlane.css
+@@ -0,0 +1,12 @@
++.Swimlane-title {
++  text-align: left;
++  font-weight: bold;
++  font-size: 18px;
++}
++
++.Swimlane-dragColumn {
++  height: calc(100vh - 100px);
++  overflow-y: auto;
++  background-color: #f5f5f5;
++  padding: 16px 8px;
++}
+diff --git a/src/Swimlane.js b/src/Swimlane.js
+new file mode 100644
+index 0000000..7e6e0d0
+--- /dev/null
++++ b/src/Swimlane.js
+@@ -0,0 +1,27 @@
++import React from 'react';
++import Card from './Card';
++import './Swimlane.css';
++
++export default class Swimlane extends React.Component {
++  render() {
++    const cards = this.props.clients.map(client => {
++      return (
++        <Card
++          key={client.id}
++          id={client.id}
++          name={client.name}
++          description={client.description}
++          status={client.status}
++        />
++      );
++    })
++    return (
++      <div className="Swimlane-column">
++        <div className="Swimlane-title">{this.props.name}</div>
++        <div className="Swimlane-dragColumn" ref={this.props.dragulaRef}>
++          {cards}
++        </div>
++      </div>);
++  }
++
++}
+diff --git a/src/index.js b/src/index.js
+index 0c5e75d..395b749 100755
+--- a/src/index.js
++++ b/src/index.js
+@@ -2,11 +2,5 @@ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import './index.css';
+ import App from './App';
+-import * as serviceWorker from './serviceWorker';
+ 
+ ReactDOM.render(<App />, document.getElementById('root'));
+-
+-// If you want your app to work offline and load faster, you can change
+-// unregister() to register() below. Note this comes with some pitfalls.
+-// Learn more about service workers: http://bit.ly/CRA-PWA
+-serviceWorker.unregister();
+diff --git a/src/logo.svg b/src/logo.svg
+deleted file mode 100755
+index 6b60c10..0000000
+--- a/src/logo.svg
++++ /dev/null
+@@ -1,7 +0,0 @@
+-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 595.3">
+-    <g fill="#61DAFB">
+-        <path d="M666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9V78c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6V78.5c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zM421.2 430c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24 4.7 8 9.5 15.8 14.4 23.4zM420.7 163c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6 0-15.7 22.9-35.6 58.3-50.6 8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zM310 490c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6zM320.8 78.4z"/>
+-        <circle cx="420.9" cy="296.5" r="45.7"/>
+-        <path d="M520.5 78.1z"/>
+-    </g>
+-</svg>
+diff --git a/src/serviceWorker.js b/src/serviceWorker.js
+deleted file mode 100755
+index 2283ff9..0000000
+--- a/src/serviceWorker.js
++++ /dev/null
+@@ -1,135 +0,0 @@
+-// This optional code is used to register a service worker.
+-// register() is not called by default.
+-
+-// This lets the app load faster on subsequent visits in production, and gives
+-// it offline capabilities. However, it also means that developers (and users)
+-// will only see deployed updates on subsequent visits to a page, after all the
+-// existing tabs open on the page have been closed, since previously cached
+-// resources are updated in the background.
+-
+-// To learn more about the benefits of this model and instructions on how to
+-// opt-in, read http://bit.ly/CRA-PWA
+-
+-const isLocalhost = Boolean(
+-  window.location.hostname === 'localhost' ||
+-    // [::1] is the IPv6 localhost address.
+-    window.location.hostname === '[::1]' ||
+-    // 127.0.0.1/8 is considered localhost for IPv4.
+-    window.location.hostname.match(
+-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+-    )
+-);
+-
+-export function register(config) {
+-  if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
+-    // The URL constructor is available in all browsers that support SW.
+-    const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
+-    if (publicUrl.origin !== window.location.origin) {
+-      // Our service worker won't work if PUBLIC_URL is on a different origin
+-      // from what our page is served on. This might happen if a CDN is used to
+-      // serve assets; see https://github.com/facebook/create-react-app/issues/2374
+-      return;
+-    }
+-
+-    window.addEventListener('load', () => {
+-      const swUrl = `${process.env.PUBLIC_URL}/service-worker.js`;
+-
+-      if (isLocalhost) {
+-        // This is running on localhost. Let's check if a service worker still exists or not.
+-        checkValidServiceWorker(swUrl, config);
+-
+-        // Add some additional logging to localhost, pointing developers to the
+-        // service worker/PWA documentation.
+-        navigator.serviceWorker.ready.then(() => {
+-          console.log(
+-            'This web app is being served cache-first by a service ' +
+-              'worker. To learn more, visit http://bit.ly/CRA-PWA'
+-          );
+-        });
+-      } else {
+-        // Is not localhost. Just register service worker
+-        registerValidSW(swUrl, config);
+-      }
+-    });
+-  }
+-}
+-
+-function registerValidSW(swUrl, config) {
+-  navigator.serviceWorker
+-    .register(swUrl)
+-    .then(registration => {
+-      registration.onupdatefound = () => {
+-        const installingWorker = registration.installing;
+-        if (installingWorker == null) {
+-          return;
+-        }
+-        installingWorker.onstatechange = () => {
+-          if (installingWorker.state === 'installed') {
+-            if (navigator.serviceWorker.controller) {
+-              // At this point, the updated precached content has been fetched,
+-              // but the previous service worker will still serve the older
+-              // content until all client tabs are closed.
+-              console.log(
+-                'New content is available and will be used when all ' +
+-                  'tabs for this page are closed. See http://bit.ly/CRA-PWA.'
+-              );
+-
+-              // Execute callback
+-              if (config && config.onUpdate) {
+-                config.onUpdate(registration);
+-              }
+-            } else {
+-              // At this point, everything has been precached.
+-              // It's the perfect time to display a
+-              // "Content is cached for offline use." message.
+-              console.log('Content is cached for offline use.');
+-
+-              // Execute callback
+-              if (config && config.onSuccess) {
+-                config.onSuccess(registration);
+-              }
+-            }
+-          }
+-        };
+-      };
+-    })
+-    .catch(error => {
+-      console.error('Error during service worker registration:', error);
+-    });
+-}
+-
+-function checkValidServiceWorker(swUrl, config) {
+-  // Check if the service worker can be found. If it can't reload the page.
+-  fetch(swUrl)
+-    .then(response => {
+-      // Ensure service worker exists, and that we really are getting a JS file.
+-      const contentType = response.headers.get('content-type');
+-      if (
+-        response.status === 404 ||
+-        (contentType != null && contentType.indexOf('javascript') === -1)
+-      ) {
+-        // No service worker found. Probably a different app. Reload the page.
+-        navigator.serviceWorker.ready.then(registration => {
+-          registration.unregister().then(() => {
+-            window.location.reload();
+-          });
+-        });
+-      } else {
+-        // Service worker found. Proceed as normal.
+-        registerValidSW(swUrl, config);
+-      }
+-    })
+-    .catch(() => {
+-      console.log(
+-        'No internet connection found. App is running in offline mode.'
+-      );
+-    });
+-}
+-
+-export function unregister() {
+-  if ('serviceWorker' in navigator) {
+-    navigator.serviceWorker.ready.then(registration => {
+-      registration.unregister();
+-    });
+-  }
+-}
